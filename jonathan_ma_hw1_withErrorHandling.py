@@ -1,22 +1,26 @@
 def main():
+    isLeapMsg = "is a leap year."
+    notLeapMsg = "is not a leap year."
 
     while True:
-        userInput = input("Enter a year: ")
-        isLeapMsg = "is a leap year."
-        notLeapMsg = "is not a leap year."
 
-        userInt = int(userInput)
-        if userInt % 4 == 0:
-            if userInt % 400 == 0:
-                print(userInt, isLeapMsg)
-            else:
-                if userInt % 100 == 0:
-                    print(userInt, notLeapMsg)
-                else:
+        try:
+            userInput = input("Enter a year: ")
+            userInt = int(userInput)
+            if userInt % 4 == 0:
+                if userInt % 400 == 0:
                     print(userInt, isLeapMsg)
+                else:
+                    if userInt % 100 == 0:
+                        print(userInt, notLeapMsg)
+                    else:
+                        print(userInt, isLeapMsg)
 
-        else:
-            print(userInt, notLeapMsg)
+            else:
+                print(userInt, notLeapMsg)
+
+        except ValueError:
+            print("Input is not a number. Please try again.")
 
 
 
