@@ -20,7 +20,10 @@ def main():
                 print(userInt, notLeapMsg)
 
         except ValueError:
-            print("Input is not a number. Please try again.")
+                print("Input is not a number. Please try again.")
+
+        else:
+            break
 
 
 
